@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-export function DevPasswordLogin() {
+export function PasswordLogin() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,11 +36,10 @@ export function DevPasswordLogin() {
   return (
     <div className="mt-8 border-t border-border pt-6">
       <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">
-        Dev password login
+        Password login
       </p>
       <p className="mb-4 text-xs text-muted">
-        Local development only. Set a password in Supabase Dashboard →
-        Authentication → Users.
+        Set a password in Supabase Dashboard → Authentication → Users.
       </p>
       <form onSubmit={handleSubmit} className="space-y-3">
         <input

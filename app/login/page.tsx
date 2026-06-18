@@ -1,5 +1,5 @@
 import { LoginForm } from "@/components/LoginForm";
-import { DevPasswordLogin } from "@/components/DevPasswordLogin";
+import { PasswordLogin } from "@/components/PasswordLogin";
 
 interface LoginPageProps {
   searchParams?: { error?: string };
@@ -9,7 +9,6 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
   const authError = searchParams?.error
     ? decodeURIComponent(searchParams.error)
     : null;
-  const isDev = process.env.NODE_ENV === "development";
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-bg px-4">
@@ -25,7 +24,7 @@ export default function LoginPage({ searchParams }: LoginPageProps) {
           </p>
         )}
         <LoginForm />
-        {isDev && <DevPasswordLogin />}
+        <PasswordLogin />
       </div>
     </div>
   );
